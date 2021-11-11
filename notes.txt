@@ -24,3 +24,6 @@ plana: false} */
 
 // go run programa.go 2 1
 // go run lector.go "12 perl" 
+
+// go get gopkg.in/mgo.v2
+// go get gopkg.in/mgo.v2/bson

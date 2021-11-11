@@ -2,15 +2,10 @@ package main
 
 import (
 	"net/http"
-	"log"
 	"encoding/json"
 )
 
-var movies = Movies{
-	Movie{"destino fatal", 2013, "Sara konor"},
-	Movie{"destino fatal 2", 2015, "Sara konor 2"},
-	Movie{"movie fexample", 2021, "cesar konor 2"},
-}
+var collection = getSession().DB("movies").C("movies")
 
 func MovieAdd(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
@@ -20,6 +15,13 @@ func MovieAdd(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	defer r.Body.Close()
-	log.Println(movie_data)
-	movies = append(movies, movie_data)
+	err = collection.Insert(movie_data)	
+	if err  != nil {
+		w.WriteHeader(500)
+		return
+	}
+
+	json.NewEncoder(w).Encode(movie_data)
+	w.Header().Set("Content-Type","application/json")
+	w.WriteHeader(200)
 }
