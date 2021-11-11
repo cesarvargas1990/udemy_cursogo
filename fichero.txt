@@ -1,0 +1,10 @@
+lengujes de programacion
+1 c++
+2 php
+3 go
+4 angular
+5 pyton
+6 ruby
+7 .net
+8 java
+9 basic

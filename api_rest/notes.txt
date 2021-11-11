@@ -1,0 +1,6 @@
+	//ejecutar esto primero
+	//go mod init api-rest   // se crea un fichero llamado go mod en la raiz con la versión del lenguaje
+    //go get -u github.com/gorilla/mux   // agrega un require al paquete
+    //go run main.go
+
+	//router := mux.NewRouter().StrictSlash(true)
