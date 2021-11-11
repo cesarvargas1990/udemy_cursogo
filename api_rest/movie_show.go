@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"encoding/json"
 	"github.com/gorilla/mux"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -21,7 +20,5 @@ func MovieShow(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(404)
 		return
 	} 
-	w.Header().Set("Content-Type","application/json")
-	w.WriteHeader(200)
-	json.NewEncoder(w).Encode(results)
+	responseMovie(w,200,results)
 }

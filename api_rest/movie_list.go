@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"encoding/json"
 	"log"
 	"fmt"
 )
@@ -15,7 +14,5 @@ func MovieList(w http.ResponseWriter, r *http.Request) {
 	} else {
 		fmt.Println("Resultados", results)
 	}
-	w.Header().Set("Content-Type","application/json")
-	w.WriteHeader(200)
-	json.NewEncoder(w).Encode(results)
+	responseMovies(w,200,results)
 }
