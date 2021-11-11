@@ -27,3 +27,6 @@ plana: false} */
 
 // go get gopkg.in/mgo.v2
 // go get gopkg.in/mgo.v2/bson
+
+// dentro de la carpeta api_rest
+// go run *.go
