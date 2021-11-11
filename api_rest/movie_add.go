@@ -5,8 +5,6 @@ import (
 	"encoding/json"
 )
 
-var collection = getSession().DB("movies").C("movies")
-
 func MovieAdd(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	var movie_data Movie 

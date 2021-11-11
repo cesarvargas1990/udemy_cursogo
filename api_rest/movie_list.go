@@ -3,13 +3,21 @@ package main
 import (
 	"net/http"
 	"encoding/json"
+	"log"
+	"fmt"
 )
 
+
+
 func MovieList(w http.ResponseWriter, r *http.Request) {
-	movies := Movies{
-		Movie{"destino fatal", 2013, "Sara konor"},
-		Movie{"destino fatal 2", 2015, "Sara konor 2"},
-		Movie{"movie fexample", 2021, "cesar konor 2"},
+	var results []Movie
+	err := collection.Find(nil).All(&results)
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println("Resultados", results)
 	}
-	json.NewEncoder(w).Encode(movies)
+	w.Header().Set("Content-Type","application/json")
+	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(results)
 }
