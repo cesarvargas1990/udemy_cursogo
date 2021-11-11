@@ -12,16 +12,12 @@ func main() {
 	var prueba2 float32 = 12.25565
 	fmt.Println(prueba)
 	fmt.Println(prueba2)
-	//time.Sleep(time.Second * 5)
 	var apellidos string = "vargas benavides"
 	pais := "colombia"
 	const year int = 2018
-	//year = 2021
-	//apellidos = false
 	apellidos = "martines"
 	fmt.Println("Hola mundo desde go con " + nombre+" "+apellidos+" pais "+pais)
 	fmt.Println(suma)
 	fmt.Println(resta)
 	fmt.Println(year)
-	//time.Sleep(1)
 }

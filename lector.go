@@ -7,10 +7,7 @@ import "os"
 func main() {
 	fmt.Println ("lector")
 	
-
-
 	nuevo_texto := os.Args[1]+"\n"
-
 	fichero2, err := os.OpenFile("fichero.txt",os.O_APPEND|os.O_WRONLY,0777)
 	showError(err)
 
@@ -19,17 +16,9 @@ func main() {
 	showError(err2)
 	fichero2.Close();
 
-
 	texto,errorDeFichero := ioutil.ReadFile("fichero.txt")
 	showError(errorDeFichero)
 	fmt.Println(string(texto))
-
-	
-	//pasar paramertos en consola asi:
-	//go run lector.go "10 otro lenguaje"
-
-	
-
 }
 
 func showError(e error) {

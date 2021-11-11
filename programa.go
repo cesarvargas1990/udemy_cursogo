@@ -30,7 +30,6 @@ func main() {
 		fmt.Println("el numero es impar")
 	}
 
-
 	peliculas := []string{"pelicula1","pelicula2","pelicula3"}
 	for i := 0; i<len(peliculas); i++ {
 		fmt.Println(peliculas[i])
@@ -38,7 +37,6 @@ func main() {
 	for _, pelicula := range peliculas {
 		fmt.Println(pelicula)
 	}
-
 
 	momento := time.Now()
 	hoy := momento.Weekday()
@@ -59,9 +57,6 @@ func main() {
 			fmt.Println("Hoy es sabado")
 		default:
 			fmt.Println("Hoy es otro dia")
-		
-		
+			
 	}
-
-
 }

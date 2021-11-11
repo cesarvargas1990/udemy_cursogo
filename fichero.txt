@@ -8,3 +8,5 @@ lengujes de programacion
 7 .net
 8 java
 9 basic
+10 scala
+11 elixir
