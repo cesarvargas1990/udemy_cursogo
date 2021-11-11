@@ -7,7 +7,6 @@ import (
 	"encoding/json"	
 )
 
-
 func MovieDelete(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	movie_id := params["id"]
