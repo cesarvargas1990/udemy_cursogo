@@ -7,8 +7,6 @@ import (
 	"fmt"
 )
 
-
-
 func MovieList(w http.ResponseWriter, r *http.Request) {
 	var results []Movie
 	err := collection.Find(nil).All(&results)
